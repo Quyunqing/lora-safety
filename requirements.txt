@@ -1,0 +1,27 @@
+# 核心依赖
+diffusers==0.32.2
+transformers==5.9.0
+accelerate==0.21.0
+peft==0.14.0
+
+# 模型和数据处理
+torch>=2.0.0
+torchvision>=0.15.0
+safetensors>=0.3.1
+numpy>=1.24.0
+Pillow>=9.5.0
+
+# Hugging Face 生态
+huggingface-hub==1.15.0
+tokenizers==0.22.2
+
+# 训练工具
+tqdm>=4.65.0
+regex>=2023.0.0
+
+# 可选：xformers（GPU加速，需匹配PyTorch/CUDA版本）
+# xformers==0.0.22.post7; sys_platform != "win32"
+
+# 可选：评估指标
+# lpips>=0.1.4
+# scikit-image>=0.20.0
