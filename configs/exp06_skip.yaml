@@ -1,0 +1,9 @@
+experiment_name: skip
+target_modules:
+- conv_shortcut
+rank: 8
+lora_alpha: 16
+learning_rate: 0.0001
+num_train_steps: 1000
+save_steps: 200
+output_dir: outputs/exp06_skip
