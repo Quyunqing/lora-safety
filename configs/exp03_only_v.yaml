@@ -1,0 +1,9 @@
+experiment_name: only_v
+target_modules:
+- to_v
+rank: 8
+lora_alpha: 16
+learning_rate: 0.0001
+num_train_steps: 1000
+save_steps: 200
+output_dir: outputs/exp03_only_v
