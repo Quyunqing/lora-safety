@@ -1,0 +1,40 @@
+# Modular LoRA 复现环境 - 稳定版
+# 论文: Safety Alignment Backfires (arXiv:2412.00357)
+# 作者: Sanghyun Kim, Moonseok Choi, Jinwoo Shin, Juho Lee (KAIST)
+# 安装说明:
+#   1. conda create -n modular-lora python=3.10
+#   2. conda activate modular-lora
+#   3. pip install -r requirements.txt
+#   4. python -c "from diffusers import UNet2DConditionModel; print('OK')"
+# ---------- PyTorch (CUDA 11.8) ----------
+# 如需CPU版本: pip install torch==2.0.1+cpu torchvision==0.15.2+cpu --index-url https://download.pytorch.org/whl/cpu
+torch==2.0.1
+torchvision==0.15.2
+
+# ---------- Hugging Face 核心库 ----------
+# 版本锁定原因:
+#   - diffusers 0.21.4: 论文实验版本，避免cached_download问题
+#   - transformers 4.38.0: 兼容peft 0.6.0，无需EncoderDecoderCache
+#   - accelerate 0.21.0: peft 0.6.0的最低要求
+#   - peft 0.6.0: 稳定版，无额外依赖
+diffusers==0.21.4
+transformers==4.38.0
+accelerate==0.21.0
+peft==0.6.0
+
+# ---------- 传递依赖（手动锁定）----------
+huggingface-hub==0.25.2      # 避免cached_download移除问题
+tokenizers==0.13.3           # transformers 4.38.0配套
+safetensors==0.3.3           # 模型权重安全序列化
+
+# ---------- 图像与数据处理 ----------
+Pillow==9.5.0
+numpy==1.24.3
+
+# ---------- 进度与工具 ----------
+tqdm==4.65.0
+regex==2023.6.3
+
+# ---------- 可选评估工具 ----------
+# nudenet==2.0.9              # 安全图像检测（Windows安装可能失败）
+# 替代方案: 使用Q16分类器或手动评估
