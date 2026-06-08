@@ -514,8 +514,6 @@ print(f'Alpha: {config.lora_alpha}')
 
 ---
 
-> **维护者**: [Your Name]
-> **联系方式**: [Your Email]
 > **最后更新**: 2026-06-06
 
 ---
